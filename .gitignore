@@ -7,3 +7,6 @@ __pycache__/
 
 # Ignore system files
 *.DS_Store
+
+# Ignore Node Modules
+node_modules/
