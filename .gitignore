@@ -1,0 +1,9 @@
+# Ignore Python virtual environment
+myenv/
+
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+
+# Ignore system files
+*.DS_Store
