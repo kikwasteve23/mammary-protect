@@ -1,14 +1,19 @@
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, ImageBackground } from "react-native";
 import { Link } from "expo-router";
 
 export default function Index() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Home Screen</Text>
-      <Link href="/about" style={styles.button}>
-        About Page
-      </Link>
-    </View>
+    <ImageBackground
+      source={{ uri: "https://example.com/background.jpg" }}
+      style={styles.image}
+    >
+      <View style={styles.container}>
+        <Text style={styles.text}>Home Screen</Text>
+        <Link href="/about" style={styles.button}>
+          About Page
+        </Link>
+      </View>
+    </ImageBackground>
   );
 }
 
@@ -26,5 +31,10 @@ const styles = StyleSheet.create({
     fontSize: 15,
     textDecorationLine: "underline",
     color: "#fafafa",
+  },
+  image: {
+    flex: 1,
+    resizeMode: "cover",
+    justifyContent: "center",
   },
 });
