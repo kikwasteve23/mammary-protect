@@ -45,38 +45,12 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="subscribe"
-        options={{
-          title: "Subscribe",
-          tabBarIcon: ({ color, focused }) => (
-            <Ionicons
-              name={focused ? "subway" : "subway-outline"}
-              color={color}
-              size={24}
-            />
-          ),
-        }}
-      />
-      <Tabs.Screen
         name="payment"
         options={{
           title: "Payment",
           tabBarIcon: ({ color, focused }) => (
             <Ionicons
               name={focused ? "cash" : "cash-outline"}
-              color={color}
-              size={24}
-            />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="notifications"
-        options={{
-          title: "Notifications",
-          tabBarIcon: ({ color, focused }) => (
-            <Ionicons
-              name={focused ? "notifications" : "notifications-outline"}
               color={color}
               size={24}
             />
