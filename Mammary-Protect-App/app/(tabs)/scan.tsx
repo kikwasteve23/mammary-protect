@@ -1,16 +1,16 @@
 import { Text, View, StyleSheet, ImageBackground } from "react-native";
 import { Link } from "expo-router";
 
-export default function Index() {
+export default function Scan() {
   return (
     <ImageBackground
-      source={{ uri: "https://example.com/background.jpg" }}
+      source={require("../../assets/images/bg.png")}
       style={styles.image}
     >
       <View style={styles.container}>
-        <Text style={styles.text}>Home Screen</Text>
-        <Link href="/about" style={styles.button}>
-          About Page
+        <Text style={styles.text}> Upload Image</Text>
+        <Link href="/" style={styles.button}>
+          Go Home
         </Link>
       </View>
     </ImageBackground>
@@ -20,17 +20,16 @@ export default function Index() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#25292e",
-    alignItems: "center",
     justifyContent: "center",
+    alignItems: "center",
   },
   text: {
-    color: "#fafafa",
+    color: "#222",
   },
   button: {
+    color: "#333",
     fontSize: 15,
     textDecorationLine: "underline",
-    color: "#fafafa",
   },
   image: {
     flex: 1,
