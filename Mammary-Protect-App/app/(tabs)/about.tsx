@@ -1,30 +1,39 @@
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, ImageBackground } from "react-native";
 import { Link } from "expo-router";
 
 export default function About() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}> Welcome to About Page</Text>
-      <Link href="/" style={styles.button}>
-        Go Home
-      </Link>
-    </View>
+    <ImageBackground
+      source={require("../../assets/images/bg.png")}
+      style={styles.image}
+    >
+      <View style={styles.container}>
+        <Text style={styles.text}> Welcome to About Page</Text>
+        <Link href="/" style={styles.button}>
+          Go Home
+        </Link>
+      </View>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#25292e",
     justifyContent: "center",
     alignItems: "center",
   },
   text: {
-    color: "#fafafa",
+    color: "#222",
   },
   button: {
-    color: "#fafafa",
+    color: "#333",
     fontSize: 15,
     textDecorationLine: "underline",
+  },
+  image: {
+    flex: 1,
+    resizeMode: "cover",
+    justifyContent: "center",
   },
 });

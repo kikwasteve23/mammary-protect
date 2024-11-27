@@ -1,16 +1,16 @@
-import { View, Text, StyleSheet, ImageBackground } from "react-native";
-import { Link, Stack } from "expo-router";
+import { Text, View, StyleSheet, ImageBackground } from "react-native";
+import { Link } from "expo-router";
 
-export default function () {
+export default function Payment() {
   return (
     <ImageBackground
-      source={require("../assets/images/bg.png")}
+      source={require("../../assets/images/bg.png")}
       style={styles.image}
     >
-      <Stack.Screen options={{ title: "Opps! Not Found" }} />
       <View style={styles.container}>
+        <Text style={styles.text}> Subscribe Here</Text>
         <Link href="/" style={styles.button}>
-          Go to Home Screen
+          Go Home
         </Link>
       </View>
     </ImageBackground>
@@ -24,10 +24,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   text: {
-    color: "#fafafa",
+    color: "#222",
   },
   button: {
-    color: "#fafafa",
+    color: "#333",
     fontSize: 15,
     textDecorationLine: "underline",
   },
