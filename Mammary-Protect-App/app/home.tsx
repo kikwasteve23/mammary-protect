@@ -7,8 +7,10 @@ import {
 } from "react-native";
 import { Link } from "expo-router";
 import { Image } from "expo-image";
+import { useRouter } from "expo-router";
 
 export default function Home() {
+  const router = useRouter();
   return (
     <ImageBackground
       source={require("@/assets/images/bg.png")}
@@ -35,7 +37,7 @@ export default function Home() {
               style={styles.button}
               activeOpacity={0.7}
               onPress={() => {
-                /* navigate to Register */
+                router.push("/register");
               }}
             >
               <Text style={styles.buttonText}>Sign Up</Text>
@@ -45,7 +47,7 @@ export default function Home() {
               style={styles.button}
               activeOpacity={0.7}
               onPress={() => {
-                /* Navigate to Login */
+                router.push("/login");
               }}
             >
               <Text style={styles.buttonText}>Have an account?</Text>
