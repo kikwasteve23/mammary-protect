@@ -1,3 +1,5 @@
+// app/index.tsx
+import React from "react";
 import {
   Text,
   View,
@@ -5,54 +7,54 @@ import {
   ImageBackground,
   TouchableOpacity,
 } from "react-native";
-import { Link } from "expo-router";
 import { Image } from "expo-image";
 import { useRouter } from "expo-router";
+import { Ionicons } from "@expo/vector-icons";
 
-export default function Home() {
+export default function Home(): React.JSX.Element {
   const router = useRouter();
+
   return (
     <ImageBackground
       source={require("@/assets/images/bg.png")}
-      style={styles.image}
+      style={styles.container}
     >
-      <View style={styles.container}>
-        {/* Image Container */}
+      <View style={styles.content}>
         <View style={styles.imageContainer}>
           <Image
             source={require("@/assets/images/home-image.png")}
             style={styles.homeImage}
+            contentFit="cover"
           />
         </View>
 
-        {/* Text and Links */}
         <View style={styles.textContainer}>
-          <Text style={styles.text}>
-            Welcome to Mammary Protect Advanced, user-friendly breast cancer
-            screening at home with thermography and echography.
+          <Text style={styles.title}>Mammary Protect</Text>
+          <Text style={styles.subtitle}>Advanced Breast Cancer Screening</Text>
+          <Text style={styles.description}>
+            User-friendly breast cancer screening at home with thermography and
+            echography.
           </Text>
+        </View>
 
-          <View style={styles.buttonContainer}>
-            <TouchableOpacity
-              style={styles.button}
-              activeOpacity={0.7}
-              onPress={() => {
-                router.push("/register");
-              }}
-            >
-              <Text style={styles.buttonText}>Sign Up</Text>
-            </TouchableOpacity>
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity
+            style={[styles.button, styles.registerButton]}
+            activeOpacity={0.7}
+            onPress={() => router.push("/register")}
+          >
+            <Ionicons name="person-add-outline" size={24} color="#fff" />
+            <Text style={styles.buttonText}>Create Account</Text>
+          </TouchableOpacity>
 
-            <TouchableOpacity
-              style={styles.button}
-              activeOpacity={0.7}
-              onPress={() => {
-                router.push("/login");
-              }}
-            >
-              <Text style={styles.buttonText}>Have an account?</Text>
-            </TouchableOpacity>
-          </View>
+          <TouchableOpacity
+            style={[styles.button, styles.loginButton]}
+            activeOpacity={0.7}
+            onPress={() => router.push("/login")}
+          >
+            <Ionicons name="log-in-outline" size={24} color="#fff" />
+            <Text style={styles.buttonText}>Sign In</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </ImageBackground>
@@ -62,54 +64,64 @@ export default function Home() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "flex-start",
+    backgroundColor: "#fff",
   },
-  textContainer: {
-    alignItems: "center",
-    width: "100%",
-    paddingHorizontal: 20,
-    marginBottom: 30,
-    marginTop: 40,
-  },
-
-  text: {
-    color: "#222",
-    fontSize: 20,
-    textAlign: "center",
-    paddingHorizontal: 5,
-    marginBottom: 20,
-  },
-
-  buttonContainer: {
-    marginTop: 10,
-  },
-
-  button: {
-    backgroundColor: "#BC37FA",
-    paddingVertical: 20,
-    paddingHorizontal: 25,
-    borderRadius: 30,
-    marginVertical: 15,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-
-  image: {
+  content: {
     flex: 1,
-    justifyContent: "center",
+    justifyContent: "space-between",
+    padding: 20,
   },
   imageContainer: {
-    marginBottom: 10,
+    marginTop: 40,
+    alignItems: "center",
   },
   homeImage: {
     width: "100%",
     height: 300,
-    borderRadius: 10,
+    borderRadius: 15,
+  },
+  textContainer: {
+    alignItems: "center",
+    padding: 20,
+  },
+  title: {
+    fontSize: 32,
+    fontWeight: "bold",
+    color: "#333",
+    marginBottom: 8,
+  },
+  subtitle: {
+    fontSize: 18,
+    color: "#666",
+    marginBottom: 12,
+  },
+  description: {
+    fontSize: 16,
+    color: "#666",
+    textAlign: "center",
+    lineHeight: 24,
+  },
+  buttonContainer: {
+    gap: 15,
+    marginBottom: 30,
+  },
+  button: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 16,
+    borderRadius: 12,
+    gap: 10,
+  },
+  registerButton: {
+    backgroundColor: "#FF69B4",
+  },
+  loginButton: {
+    backgroundColor: "#2196F3",
   },
   buttonText: {
     color: "#fff",
-    fontSize: 20,
-    textAlign: "center",
+    fontSize: 18,
     fontWeight: "bold",
   },
 });

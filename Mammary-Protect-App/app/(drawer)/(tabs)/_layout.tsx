@@ -18,9 +18,9 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="tips"
+        name="results"
         options={{
-          title: "Tips",
+          title: "Scan Results",
           tabBarIcon: ({ color, focused }) => (
             <Ionicons
               name={focused ? "help-buoy" : "help-buoy-outline"}
@@ -31,27 +31,14 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="about"
+        name="notifications"
         options={{
-          title: "About",
+          title: "Notifications",
           tabBarIcon: ({ color, focused }) => (
             <Ionicons
               name={
                 focused ? "information-circle" : "information-circle-outline"
               }
-              color={color}
-              size={24}
-            />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="subscription"
-        options={{
-          title: "subscription",
-          tabBarIcon: ({ color, focused }) => (
-            <Ionicons
-              name={focused ? "cash" : "cash-outline"}
               color={color}
               size={24}
             />
